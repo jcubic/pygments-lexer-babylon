@@ -15,7 +15,7 @@ RESERVED_WORDS = (
     'finally', 'for', 'if', 'return', 'switch', 'throw', 'try',
     'while', 'with', 'new', 'this', 'super',
     'extends', 'export', 'import', 'yield', 'null', 'true', 'false', 'in',
-    'instanceof', 'typeof', 'void', 'delete'
+    'instanceof', 'typeof', 'void', 'delete', 'async', 'await'
 )
 
 RESERVED_WORDS_DECL = (
