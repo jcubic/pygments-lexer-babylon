@@ -117,7 +117,7 @@ def gettokentype(text, tokens, i):
 
 class BabylonLexer(Lexer):
     name = 'Babylon'
-    aliases = ['jsx']
+    aliases = ['jsx', 'jsnext']
     filenames = ['*.jsx']
 
     def get_tokens_unprocessed(self, text):
@@ -184,3 +184,5 @@ class BabylonHtmlLexer(HtmlLexer):
             (r'.+?(?=<\s*/\s*script\s*>)', using(BabylonLexer)),
         ]
     }
+
+__all__ = ['BabylonLexer', 'BabylonHtmlLexer']
