@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # from subprocess import check_output, STDOUT, CalledProcessError
 import subprocess
 import os
@@ -66,7 +67,7 @@ def gettokentype(text, tokens, i):
         return String.Regex
     elif ttype == 'string':
         return String
-    elif ttype == 'num':
+    elif ttype == 'num' or ttype == 'bigint':
         return Number
 
     # reserved words

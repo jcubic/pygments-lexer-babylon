@@ -1,4 +1,4 @@
-var babylon = require("babylon");
+var parser = require("@babel/parser");
 var input = '';
 var ret = [];
 var i;
@@ -8,16 +8,17 @@ process.stdin.on('data', function (chunk) {
   input += chunk;
 });
 process.stdin.on('end', function () {
-  var ast  = babylon.parse(input, {
+  var ast  = parser.parse(input, {
     sourceType: 'module',
     allowImportExportEverywhere: true,
     allowReturnOutsideFunction: true,
+    tokens: true,
     plugins: [
       'asyncFunctions',
       'asyncGenerators',
       'classConstructorCall',
       'classProperties',
-      'decorators',
+      'decorators-legacy',
       'doExpressions',
       'exponentiationOperator',
       'exportExtensions',
@@ -26,7 +27,9 @@ process.stdin.on('end', function () {
       'functionBind',
       'jsx',
       'objectRestSpread',
-      'trailingFunctionCommas'
+      'trailingFunctionCommas',
+      'bigInt',
+      'estree',
     ]
   });
 
